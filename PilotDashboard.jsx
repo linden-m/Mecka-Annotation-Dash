@@ -72,13 +72,13 @@ export default function PilotDashboard() {
       <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
         {/* Header chrome bar */}
         <div className="relative flex items-center justify-end px-5 py-3" style={{ backgroundColor: NAVY }}>
-          <span className="absolute left-1/2 -translate-x-1/2 text-white text-[15px] font-semibold whitespace-nowrap">
+          <span className="absolute left-1/2 -translate-x-1/2 text-white text-[13px] font-semibold whitespace-nowrap">
             Mecka Pilot — Embodied-AI Verification
           </span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLive((v) => !v)}
-              className="flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-md transition-colors"
+              className="flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md transition-colors"
               style={{ backgroundColor: live ? AMBER : "rgba(255,255,255,0.15)", color: live ? NAVY : "white" }}
             >
               <Circle size={7} fill={live ? TEAL : RED} color={live ? TEAL : RED} className={live ? "animate-pulse" : ""} />
