@@ -71,12 +71,10 @@ export default function PilotDashboard() {
     <div className="w-full max-w-5xl mx-auto font-sans">
       <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-lg">
         {/* Header chrome bar */}
-        <div className="flex items-center justify-between px-5 py-3" style={{ backgroundColor: NAVY }}>
-          <div className="flex items-center gap-3">
-            <span className="text-white text-[13px] font-semibold">
-              Mecka Pilot — Embodied-AI Verification &nbsp;|&nbsp; Week 1
-            </span>
-          </div>
+        <div className="relative flex items-center justify-end px-5 py-3" style={{ backgroundColor: NAVY }}>
+          <span className="absolute left-1/2 -translate-x-1/2 text-white text-[15px] font-semibold whitespace-nowrap">
+            Mecka Pilot — Embodied-AI Verification
+          </span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setLive((v) => !v)}
