@@ -64,12 +64,7 @@ export default function PilotDashboard() {
         {/* Header chrome bar */}
         <div className="flex items-center justify-between px-5 py-3" style={{ backgroundColor: NAVY }}>
           <div className="flex items-center gap-3">
-            <div className="flex gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: AMBER }} />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/40" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/40" />
-            </div>
-            <span className="text-white text-[13px] font-semibold ml-2">
+            <span className="text-white text-[13px] font-semibold">
               Mecka Pilot — Embodied-AI Verification &nbsp;|&nbsp; Week 1
             </span>
           </div>
@@ -79,7 +74,7 @@ export default function PilotDashboard() {
               className="flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-md transition-colors"
               style={{ backgroundColor: live ? AMBER : "rgba(255,255,255,0.15)", color: live ? NAVY : "white" }}
             >
-              <Circle size={7} fill={live ? NAVY : "white"} className={live ? "animate-pulse" : ""} />
+              <Circle size={7} fill={live ? TEAL : RED} color={live ? TEAL : RED} className={live ? "animate-pulse" : ""} />
               {live ? "LIVE" : "PAUSED"}
             </button>
             <button
@@ -173,6 +168,9 @@ export default function PilotDashboard() {
       </div>
       <p className="text-center text-[11px] text-slate-400 mt-3">
         Live-updating mockup — numbers refresh automatically every few seconds, or click the refresh icon
+      </p>
+      <p className="text-center text-[11px] text-slate-400 mt-1">
+        Source report: <a className="text-[#1E2761] underline underline-offset-2 hover:text-[#3FA796]" href="https://example.com/mecka-pilot-week-1-report" target="_blank" rel="noreferrer">Mecka Pilot Week 1 (mock)</a>
       </p>
     </div>
   );
