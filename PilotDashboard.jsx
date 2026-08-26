@@ -16,7 +16,7 @@ const reasonData = [
   { code: "Hand", value: 9 },
 ];
 
-function MetricCard({ label, big, sub, decision, accent, trend, children }) {
+function MetricCard({ label, big, sub, decision, accent, trend, status = "On target", statusTone = "good", children }) {
   return (
     <div className="bg-white rounded-xl border border-slate-200 p-4 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200">
       <div className="h-1 w-8 rounded-full mb-3" style={{ backgroundColor: accent }} />
@@ -28,13 +28,22 @@ function MetricCard({ label, big, sub, decision, accent, trend, children }) {
         <span>{sub}</span>
       </div>
       {children}
+      <div
+        className="text-[11px] font-bold px-2 py-0.5 rounded-full w-fit mb-2"
+        style={{
+          backgroundColor: statusTone === "good" ? "#E1F5EE" : "#FCEBEB",
+          color: statusTone === "good" ? "#085041" : "#791F1F",
+        }}
+      >
+        {status}
+      </div>
       <div className="text-[11px] italic text-slate-400 mt-auto pt-2">{decision}</div>
     </div>
   );
 }
 
 export default function PilotDashboard() {
-  const [clips, setClips] = useState(1240);
+  const [clips, setClips] = useState(1186);
   const [kappa, setKappa] = useState(0.79);
   const [unclear, setUnclear] = useState(6.2);
   const [live, setLive] = useState(true);
@@ -111,17 +120,9 @@ export default function PilotDashboard() {
             decision="Supports: go/no-go gate for scaling past pilot"
             accent={kappaOk ? TEAL : RED}
             trend={kappaOk ? "down" : "up"}
-          >
-            <div
-              className="text-[11px] font-bold px-2 py-0.5 rounded-full w-fit mb-2"
-              style={{
-                backgroundColor: kappaOk ? "#E1F5EE" : "#FCEBEB",
-                color: kappaOk ? "#085041" : "#791F1F",
-              }}
-            >
-              {kappaOk ? "On target" : "Below target"}
-            </div>
-          </MetricCard>
+            status={kappaOk ? "On target" : "Below target"}
+            statusTone={kappaOk ? "good" : "bad"}
+          />
 
           <MetricCard
             label="% MARKED UNCLEAR"
