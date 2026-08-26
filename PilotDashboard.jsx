@@ -133,8 +133,8 @@ export default function PilotDashboard() {
 
           <MetricCard
             label="COST / DELIVERED CLIP"
-            big="$0.94"
-            sub="In-house $0.92  •  BPO $1.05"
+            big="$0.92 / $1.05"
+            sub="In-house / BPO (incl. rework)"
             decision="Supports: volume allocation, in-house vs. BPO"
             accent={AMBER}
           />
