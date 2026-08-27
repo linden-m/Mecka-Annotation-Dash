@@ -73,7 +73,7 @@ export default function PilotDashboard() {
         {/* Header chrome bar */}
         <div className="relative flex items-center justify-end px-5 py-3" style={{ backgroundColor: NAVY }}>
           <span className="absolute left-1/2 -translate-x-1/2 text-white text-[13px] font-semibold whitespace-nowrap">
-            Mecka Pilot — Embodied-AI Verification
+            Manipulation Task Dashboard
           </span>
           <div className="flex items-center gap-2">
             <button
